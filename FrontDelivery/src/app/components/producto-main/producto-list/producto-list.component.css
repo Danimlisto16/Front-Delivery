@@ -1,0 +1,16 @@
+.caja {
+     
+     display: -webkit-flex;
+     -webkit-flex-wrap: wrap !important;
+     -webkit-align-content: flex-start !important;
+     flex-wrap: wrap !important;
+     display: flex !important;
+     align-content: flex-start !important;
+}
+
+/* .boton:first-child {
+     display: -webkit-flex;
+     -webkit-flex-direction: column-reverse !important;
+     display: flex !important;
+     flex-direction: column !important;
+} */

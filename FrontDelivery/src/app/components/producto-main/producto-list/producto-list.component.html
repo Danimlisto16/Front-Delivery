@@ -1,0 +1,28 @@
+ 
+ <a class="btn btn-primary btn-lg active" [routerLink]="['/productos/add']" role="button" aria-pressed="true"><fa-icon class="fa-2x" [icon]="faPlus"></fa-icon><span>  Agregar</span></a>
+ 
+ <div class="caja">
+ 
+ <div class="col-md-4" *ngFor="let producto of productos">
+     <div class="card text-center">
+       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+         {{producto.nombre}}
+         <button class="btn btn-danger" (click)="delete(producto)">
+          <fa-icon [icon]="faTrash"></fa-icon>
+         </button>
+       </div>
+       <img class="card-img-top" width="100px" [src]="producto.imageUrl">
+       <div class="card-body" >
+
+         <!-- <p>{{valor[i].toString()}} </p>  -->
+         <p>{{producto.stock}} unidades</p>
+         <p>$ {{producto.precio| number : '1.2-2'}} (por unidad)</p>
+         
+         <a [routerLink]="['/productos/edit', producto.id_producto]" class="btn btn-info btn-block">
+          EDITAR PRODUCTO
+        </a>
+       </div>
+     </div>
+     <br>
+   </div>
+  </div>
