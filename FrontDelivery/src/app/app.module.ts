@@ -1,41 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule}  from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PRODUCTOService } from './services/producto.service';
-import { ServiceInterceptor } from './services/service.interceptor';
+import { ClienteMainComponent } from './cliente-main/cliente-main.component';
+import { ClienteFormComponent } from './cliente-main/cliente-form/cliente-form.component';
+import { ClienteListComponent } from './cliente-main/cliente-list/cliente-list.component';
+import {ClienteService} from './shared/cliente.service';  
 
-import { ProductoFormComponent } from './components/producto-main/producto-form/producto-form.component';
-
-import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
-import { CategoriaPipe } from './shared/pipes/categoria.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoFormComponent,
-    ProductoListComponent,
-    CategoriaPipe
+    ClienteMainComponent,
+    ClienteFormComponent,
+    ClienteListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    ReactiveFormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [
-    PRODUCTOService, {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ServiceInterceptor,
-      multi: true
-    }
-  ],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

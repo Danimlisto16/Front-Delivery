@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
-import { ProductoFormComponent } from './components/producto-main/producto-form/producto-form.component';
+import { ClienteMainComponent } from './cliente-main/cliente-main.component';
+import { ClienteFormComponent } from './cliente-main/cliente-form/cliente-form.component';
+import { ClienteListComponent } from './cliente-main/cliente-list/cliente-list.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/', pathMatch: 'full'},
-  {path: 'productos', component: ProductoListComponent},
-  {path: 'productos/add', component:ProductoFormComponent},
-  {path: 'productos/edit/:id', component: ProductoFormComponent}
+  { path: 'cliente', component: ClienteMainComponent },
+  { path: 'cliente/Form', component: ClienteFormComponent },
+  { path: 'cliente/List', component: ClienteListComponent }
+  
+
 ];
 
 @NgModule({

@@ -1,0 +1,115 @@
+<div class = "contenedor">
+    <div>
+        <h1>CLIENTE</h1>
+        <i class = "fa fa-user fa-3x"></i> 
+    </div>
+    
+    <form #form = "ngForm" (submit) = "onSubmit(form)"  autocomplete = " off " >
+
+        <div class="form-group">
+            <label >Documento:</label>
+            <input name = "documento" #documento ="ngModel"  [(ngModel)] = "service.formData.documento" class = "form-control"  type="number"  placeholder="ej: 0602245874"  required minlength="10" maxlength="15">
+            
+            <div *ngIf=" documento.invalid && (documento.dirty || documento.touched)" class="alert">
+                <div *ngIf=" documento.errors.required">
+                    * El documento es requerido
+                </div>
+                <div *ngIf=" documento.errors.minlength">
+                    * Minimo 10 digitos
+                </div>
+                <div *ngIf=" documento.errors.maxlength">
+                    * Maximo 15 digitos
+                </div>
+            </div>
+        </div >   
+
+
+        <div class="form-group">
+            <label >Nombres:</label>
+            <input name = "nombres" #nombres = "ngModel" class = "form-control" type="text"  [(ngModel)] = "service.formData.nombres" placeholder=" ej: Juan José"  required>
+            <div *ngIf=" nombres.invalid && (nombres.dirty || nombres.touched)" class="alert">
+                * El nombre es requerido
+            </div>
+        </div>
+        
+        
+        <div class="form-group">
+            <label >Apellidos:</label>
+            <input name = "apellidos" #apellidos = "ngModel"  class = "form-control" type="text"  [(ngModel)] = "service.formData.apellidos" placeholder="ej: Pérez Díaz" required>
+            <div *ngIf=" apellidos.invalid && (apellidos.dirty || apellidos.touched)" class="alert">
+                * Apellido es requerido
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label >Celular:</label>
+            <input name = "celular" #celular = "ngModel"  class = "form-control" type="text"  [(ngModel)] = "service.formData.celular" placeholder="ej: 0999847550" required minlength="10">
+            <div *ngIf=" celular.invalid && (celular.dirty || celular.touched)" class="alert">
+                <div *ngIf=" celular.errors.required">
+                    * El celular es requerido
+                </div>
+                <div *ngIf=" celular.errors.minlength">
+                    * Minimo 10 digitos
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label >Correo:</label>
+            <input name = "correo"  #correo = "ngModel" class = "form-control" type="mail"  [(ngModel)] = "service.formData.correo" placeholder="ej: user@mail.com " required >
+            <div *ngIf=" correo.invalid && (correo.dirty || correo.touched)" class="alert">
+                <div *ngIf=" correo.errors">
+                    * Ingresa un email válido
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label >Direccion:</label>
+            <textarea name = "direccion" #direccion = "ngModel" class = "form-control" type = "text"  [(ngModel)] = "service.formData.direccion"  placeholder="ej: " required></textarea>
+            <div *ngIf=" direccion.invalid && (direccion.dirty || direccion.touched)" class="alert">
+                * Direccion requerida
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label >Fecha de nacimiento:</label>
+            <input name = "fecha_nac"  #fecha_nac = "ngModel" class = "form-control" type="date"  [(ngModel)] = "service.formData.fecha_nac" required >
+            <div *ngIf=" fecha_nac.invalid && (fecha_nac.dirty || fecha_nac.touched)" class="alert">
+                * Fecha de nacimiento es requerida
+            </div>
+        </div>
+
+        <hr>
+
+
+        <div class="form-group">
+            <label >Usuario:</label>
+            <input name = "usuario" #usuario = "ngModel"  class = "form-control" type="text"  [(ngModel)] = "service.formData.usuario" required>
+            <div *ngIf=" usuario.invalid && (usuario.dirty || usuario.touched)" class="alert">
+                * Usuario requerido
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label >Password:</label>
+            <input name = "password" #password="ngModel" class = "form-control" type="password"  [(ngModel)] = "service.formData.password" required>
+            <div *ngIf=" password.invalid && (password.dirty || password.touched)" class="alert">
+                * Contraseña requerida
+            </div>
+        </div>
+
+
+        <hr>
+        <div class="form-group"><br>
+            <button  type="submit" [disabled] = "form.invalid"  class = "btn-primary btn-lg btn-block">Aceptar</button>
+        </div>
+        
+    </form >
+    
+</div>
