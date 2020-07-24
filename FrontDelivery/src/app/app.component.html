@@ -11,10 +11,8 @@
     <!-- navigation -->
     <ul class="main-menu-nav">
       <li><a href="/cliente/Form" class="orange"><i class="fa fa-user fa-fw"></i>&nbsp;Clientes</a></li>
+      <li><a href="/productos" routerLinkActive="active" class="yellow"><i class="fa fa-flask fa-fw front"></i>&nbsp; Productos</a></li>
       <li><a href="/facturas" class="red"><i class="fa fa-graduation-cap fa-fw"></i>&nbsp; Facturas</a></li>
-      <li><a href="#" class="yellow"><i class="fa fa-flask fa-fw front"></i>&nbsp; Materias</a></li>
-      <li><a href="#" class="green"><i class="fa fa-star fa-fw"></i>&nbsp; Calificaciones</a></li>
-      <li><a href="#" class="purple"><i class="fa fa-university fa-fw"></i>&nbsp; Areas</a></li>
       <li><a href="#" class="purple"><i class="fa fa-info-circle fa-fw"></i>&nbsp; Acerca de</a></li>
     </ul>
 
@@ -22,8 +20,12 @@
   </div>
 </div>
 
+<div class="container" id="margen" >
+  <div class="container-fluid" >
+    
+    <router-outlet></router-outlet>
+  </div>    
+</div>
 
 
 
-
-<router-outlet></router-outlet>
