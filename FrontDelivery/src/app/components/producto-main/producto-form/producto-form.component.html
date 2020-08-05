@@ -1,0 +1,83 @@
+<div class="col-md-4 offset-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input formControlName="nombre" type="text" class="form-control form-control-user" [(ngModel)]="producto.nombre" 
+          [ngClass]="{'is-invalid': submitted && f.nombre.errors}" 
+          placeholder="Nombre">
+        </div>
+        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+          <div *ngIf="f.nombre.errors.required">El nombre del producto es requerido</div>
+          
+      </div>
+
+        <div class="form-group">
+          <input formControlName="stock" type="number" class="form-control form-control-user" [(ngModel)]="producto.stock" 
+          [ngClass]="{'is-invalid': submitted && f.stock.errors}" 
+          placeholder="Stock">
+        </div>
+
+        <div *ngIf="submitted && f.stock.errors" class="invalid-feedback">
+          <div *ngIf="f.stock.errors.required">El stock es requerido</div>
+          
+          <!-- <div *ngIf="f.stock.errors.max">El stock debe ser menor a 1000 productos</div> -->
+      </div>
+
+        <div class="form-group">
+          <input formControlName="precio" type="text" class="form-control form-control-user" [(ngModel)]="producto.precio" 
+          [ngClass]="{'is-invalid': submitted && f.precio.errors}" 
+          placeholder="Precio">
+        </div>
+
+        <div *ngIf="submitted && f.precio.errors" class="invalid-feedback">
+          <div *ngIf="f.precio.errors.required">El precio es requerido</div>
+          <div *ngIf="f.precio.errors.minlength">El precio debe ser un numero decimal</div>
+      </div>
+
+        <!-- select categoria -->
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Categoría</label>
+          <select formControlName="categoria" [(ngModel)]="producto.id_pcategoria" 
+          [ngClass]="{'is-invalid': submitted && f.categoria.errors }" 
+          class="form-control form-control-user">
+            <option *ngFor="let opt of producto_categoria" [ngValue]="opt.id_categoria" >{{opt.nombre}}</option>
+          </select>
+        </div>
+        <div *ngIf="submitted && f.categoria.errors" class="invalid-feedback">
+          <div *ngIf="f.categoria.errors.required">La Categoria es requerida</div>
+          
+      </div>
+        <div class="form-group">
+          <input formControlName="imageUrl" type="url" class="form-control form-control-user" [(ngModel)]="producto.imageUrl" 
+          [ngClass]="{'is-invalid': submitted && f.imageUrl.errors}" 
+          placeholder="Url">
+        </div>
+
+        <div *ngIf="submitted && f.imageUrl.errors" class="invalid-feedback">
+          <div *ngIf="f.imageUrl.errors.required">La Url es requerida</div>
+          
+      </div>
+
+       <div class="btn-group">
+            <button type="submit" class="btn btn-success">
+                <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar
+            </button>
+            <button type="reset" (click)="onReset()" class="btn btn-danger">
+                <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar
+            </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+   <div class="col-md-4">
+     <div class="card card-body text-center">
+     <img [src]="producto.imageUrl == undefined ? '/assets/noimage.png' : producto.imageUrl" alt="No Image" class="card-img-top">
+       <h3>{{producto.nombre == undefined ? 'Nombre Producto' : producto.nombre}}</h3>
+       <p>{{producto.stock== undefined ? '0' : producto.stock}} unidades</p>
+       <p>$ {{producto.precio | number : '1.2-2'}}</p>
+     </div>
+   </div>

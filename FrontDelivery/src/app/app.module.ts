@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule}  from '@angular/common/http';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS}  from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,22 +9,36 @@ import { ClienteMainComponent } from './cliente-main/cliente-main.component';
 import { ClienteFormComponent } from './cliente-main/cliente-form/cliente-form.component';
 import { ClienteListComponent } from './cliente-main/cliente-list/cliente-list.component';
 import {ClienteService} from './shared/cliente.service';  
-
-
+import { PRODUCTOService } from './services/producto.service';
+import { ServiceInterceptor } from './services/service.interceptor';
+import { ProductoFormComponent } from './components/producto-main/producto-form/producto-form.component';
+import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
     ClienteMainComponent,
     ClienteFormComponent,
-    ClienteListComponent
+    ClienteListComponent,
+    ProductoFormComponent,
+    ProductoListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
-  providers: [ClienteService],
+  providers: [
+    ClienteService,
+    PRODUCTOService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ServiceInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
