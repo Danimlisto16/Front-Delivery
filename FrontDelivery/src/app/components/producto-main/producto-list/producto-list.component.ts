@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { faTrash, faListAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import swal from 'sweetalert2';
 import { PRODUCTOService } from 'src/app/services/producto.service';
