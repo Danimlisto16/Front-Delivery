@@ -5,6 +5,7 @@ import { ClienteFormComponent } from './cliente-main/cliente-form/cliente-form.c
 import { ClienteListComponent } from './cliente-main/cliente-list/cliente-list.component';
 import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
 import { ProductoFormComponent } from './components/producto-main/producto-form/producto-form.component';
+import { ComprasListComponent } from './compras-main/compras-list/compras-list.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'cliente/Form', component: ClienteFormComponent },
   { path: 'cliente/List', component: ClienteListComponent },
   {path: 'productos', component: ProductoListComponent},
+  {path: 'compras', component: ComprasListComponent},
   {path: 'productos/add', component:ProductoFormComponent},
   {path: 'productos/edit/:id', component: ProductoFormComponent}
   

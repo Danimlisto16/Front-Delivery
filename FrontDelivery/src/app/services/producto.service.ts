@@ -9,7 +9,7 @@ import { isFunction } from 'util';
 })
 export class PRODUCTOService {
 
-  url : string = "https://localhost:44327/api/producto";
+  url : string = "http://dlisto-001-site1.ftempurl.com/api/producto";
 
   httpOptions={
     headers:new HttpHeaders({

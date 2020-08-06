@@ -75,7 +75,7 @@
 
    <div class="col-md-4">
      <div class="card card-body text-center">
-     <img [src]="producto.imageUrl == undefined ? '/assets/noimage.png' : producto.imageUrl" alt="No Image" class="card-img-top">
+     <img width="100px" [src]="producto.imageUrl == undefined ? '/assets/noimage.png' : producto.imageUrl" alt="No Image" class="card-img-top">
        <h3>{{producto.nombre == undefined ? 'Nombre Producto' : producto.nombre}}</h3>
        <p>{{producto.stock== undefined ? '0' : producto.stock}} unidades</p>
        <p>$ {{producto.precio | number : '1.2-2'}}</p>

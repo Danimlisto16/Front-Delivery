@@ -27,14 +27,14 @@ export class ServiceInterceptor implements HttpInterceptor {
             icon : "success"
           });
         }        
-        if(next.status === 200)
+        /*if(next.status === 200)
         { 
           Swal.fire({
             title : "¡Correcto!",
             text : next.body,
             icon : "success"
           });
-        }
+        }*/
       }
     }, error => {
       console.error(error);

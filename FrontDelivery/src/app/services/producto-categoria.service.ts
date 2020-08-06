@@ -9,7 +9,7 @@ import { PRODUCTOCATEGORIA } from '../models/producto-categoria';
 })
 export class PRODUCTOCATEGORIAService {
 
-  url : string = "https://localhost:44327/api/producto_categoria";
+  url : string = "http://dlisto-001-site1.ftempurl.com/api/producto_categoria";
 
   httpOptions={
     headers:new HttpHeaders({

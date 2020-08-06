@@ -1,0 +1,16 @@
+<div class="col-md-4" *ngFor="let producto of productos">
+     <div class="card text-center">
+       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+         {{producto.nombre}}
+         
+       </div>
+       <img class="card-img-top" [src]="producto.imageUrl">
+       <div class="card-body">
+          <p>{{producto.stock}} unidades</p>
+          <p>$ {{producto.precio| currency }} (por unidad)</p>
+         <a  class="btn btn-success btn-block">
+           COMPRAR
+         </a>
+       </div>
+     </div>
+   </div>

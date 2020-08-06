@@ -14,6 +14,7 @@ import { ServiceInterceptor } from './services/service.interceptor';
 import { ProductoFormComponent } from './components/producto-main/producto-form/producto-form.component';
 import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ComprasListComponent } from './compras-main/compras-list/compras-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ClienteFormComponent,
     ClienteListComponent,
     ProductoFormComponent,
-    ProductoListComponent
+    ProductoListComponent,
+    ComprasListComponent
   ],
   imports: [
     BrowserModule,
