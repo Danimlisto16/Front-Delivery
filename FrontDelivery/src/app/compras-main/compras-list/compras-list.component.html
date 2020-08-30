@@ -6,10 +6,10 @@
        </div>
        <img class="card-img-top" [src]="producto.imageUrl">
        <div class="card-body">
-          <p>{{producto.stock}} unidades</p>
-          <p>$ {{producto.precio| currency }} (por unidad)</p>
-         <a  class="btn btn-success btn-block">
-           COMPRAR
+          <!-- <p>{{producto.stock}} unidades</p> -->
+          <h6>{{producto.precio| currency }}</h6>
+         <a (click)="agregarCarrito(producto)" class="btn btn-success btn-block" >
+           AGREGAR A CARRITO
          </a>
        </div>
      </div>

@@ -19,6 +19,13 @@ export class PRODUCTOService {
   };
   constructor(private http:HttpClient) { }
 
+  list(): Observable<PRODUCTO[]> {
+    return this.http.get<PRODUCTO[]>(this.url, this.httpOptions)
+      .pipe(
+        retry(1)
+      );
+  }
+  
   save(a:PRODUCTO) : Observable<any> {
     let PRODUCTOBody = JSON.stringify(a);    
     if(a.id_producto === undefined){      
@@ -39,10 +46,5 @@ export class PRODUCTOService {
       this.httpOptions);
   }
 
-  list(): Observable<PRODUCTO[]> {
-    return this.http.get<PRODUCTO[]>(this.url, this.httpOptions)
-      .pipe(
-        retry(1)
-      );
-  }
+  
 }

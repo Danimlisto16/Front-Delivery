@@ -1,41 +1,56 @@
 import { Injectable } from '@angular/core';
-import { cliente } from './cliente.model';
-import {HttpClient} from '@angular/common/http';
-
+import { Cliente } from './cliente.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable } from 'rxjs';
+import { retry } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  formData : cliente;
-  list: cliente[];
-  constructor(private http: HttpClient) { }
-  readonly rootURL = "https://localhost:44327/api";
+  url : string = "http://dlisto-001-site1.ftempurl.com/api/cliente";
+  httpOptions={
+    headers:new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'      
+    })
+  };
+  constructor(private http:HttpClient) { }
 
-
-  postCliente(formData : cliente){
-    return this.http.post(this.rootURL+"/cliente",formData)
+  save(a:Cliente) : Observable<any> {
+    let ClienteBody = JSON.stringify(a);    
+    if(a.id_cliente === undefined){      
+      return this.http.post<any>(this.url, ClienteBody, this.httpOptions);
+    }
+    return this.http.put<any>(this.url, ClienteBody, this.httpOptions);
   }
 
-  putCliente(formData : cliente){
-    return this.http.put(this.rootURL+"/cliente/"+formData.id_cliente,formData)
+  retrieve(id:number): Observable<Cliente> {
+    return this.http.get<Cliente>(this.url + "/" + id, this.httpOptions)
+      .pipe(
+        retry(1)
+      );
+  } 
+
+  delete(a: Cliente) : Observable<any> {
+    return this.http.delete<any>(this.url + '/' + a.id_cliente, 
+      this.httpOptions);
   }
 
 
-  getListaClientes(){
-    this.http.get(this.rootURL+"/cliente")
-    .toPromise().then(res => this.list = res as cliente[])
-    .catch(error => {
-      alert("Ocurrio un error al cargar la lista");
-    });
+  list(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.url, this.httpOptions)
+      .pipe(
+        retry(1)
+      );
   }
 
+   
 
-  onDelete(id : number){
-    return this.http.delete(this.rootURL+"/cliente/"+id);
+  search(criterio:string): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.url.concat("?cedula=").concat(criterio), this.httpOptions)
+      .pipe(
+        retry(1)
+      );
   }
-
-
-
-  
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ClienteService } from 'src/app/shared/cliente.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
+import { Cliente } from 'src/app/shared/cliente.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,52 +12,69 @@ import { NgForm } from '@angular/forms';
 })
 export class ClienteFormComponent implements OnInit {
 
-  constructor(public service : ClienteService) { }
+  title = "Nuevo Cliente"
+  cliente : Cliente = new Cliente();
+  form : FormGroup;
+
+  constructor(private clienteservice : ClienteService,
+    private formBuilder: FormBuilder, 
+    private activatedRoute : ActivatedRoute, 
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-    this.resetForm();
-  }
+    this.form = this.formBuilder.group({
+      documento: [''],
+      nombres: [''],
+      apellidos: [''],
+      fecha_nac: [''],
+      celular: [''],
+      direccion: [''],
+      correo: [''],
+      usuario: [''],
+      password: ['']
+      
+    });  
 
-  onSubmit(form: NgForm){
-    this.insertRecord(form);
-    //Agregar mensaje de felicitaci[on]
+    this.activatedRoute.params.subscribe(
+      params => {
+        if(params['id']){
+          this.clienteservice.retrieve(params['id']).subscribe(
+              result =>
+              { 
+                this.cliente = result;
+                this.title = "Actualizando el registro de " + this.cliente.documento;
+              }
+          )
+        }
+      }
+    );
 
-  }
 
-  llenarForm(form : NgForm){
+    
     
   }
-
-  resetForm(form? : NgForm){
-    if(form != null)
-      form.resetForm();
-    this.service.formData = {
-      id_cliente : null,
-      documento :'',
-      nombres :'',
-      apellidos :'',
-      celular :'',
-      correo :'',
-      direccion:'',
-      fecha_nac :null,        
-      usuario :'',
-      password :''
+  
+  onSubmit() : void {
+    if(this.form.invalid){
+      console.error('Error en formulario');
+      return;
     }
+
+    console.log(this.cliente);
+
+    this.clienteservice.save(this.cliente).subscribe(
+      
+        result => {
+          console.log(result);   
+          this.router.navigate(['/cliente/list']);
+        }
+      
+      
+    );
   }
 
-  insertRecord(form: NgForm){
-
-    this.service.postCliente(form.value).subscribe(res => {
-      this.resetForm(form);
-    })
-  }
-
-  onDelete(id:number){
-    if(confirm("Estas seguro de eliminar el registro?")){
-      this.service.onDelete(id).subscribe(res => {
-        this.service.getListaClientes();
-      })
-      }
-
+  onReset() : void {   
+    this.form.reset();    
   }
 }

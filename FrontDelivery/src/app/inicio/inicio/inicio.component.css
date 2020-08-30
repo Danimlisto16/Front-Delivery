@@ -1,7 +1,55 @@
-h1{
-    margin-left: 500px;
+
+
+/* external css: flickity.css */
+.titulo{
+  text-align: center;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.log{
-    margin-left: 900px;
+body { font-family: sans-serif; }
+
+.gallery {
+  background: #EEE;
 }
+
+.gallery-cell {
+  width: 66%;
+  height: 400px;
+  margin-right: 10px;
+  background-image: url("https://fuentesanfelipe.com/wp-content/uploads/2018/05/MG_0740.jpg");
+  /* counter-increment: gallery-cell; */
+}
+.gallery-cell1 {
+  width: 66%;
+  height: 400px;
+  margin-right: 10px;
+  background-image: url("/assets/botellon2.jpg");
+  /* counter-increment: gallery-cell; */
+}
+.gallery-cell2 {
+  width: 66%;
+  height: 400px;
+  margin-right: 10px;
+  background-image: url("/assets/Gas.jpg");
+  /* counter-increment: gallery-cell; */
+}
+.card-text{
+    text-align: justify;
+}
+.card-title{
+  text-align: center;
+}
+
+/* cell number */
+/* .gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+} */
+

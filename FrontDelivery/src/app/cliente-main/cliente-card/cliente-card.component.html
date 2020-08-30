@@ -1,0 +1,52 @@
+<h3>{{cliente.documento | uppercase }}</h3>
+<fieldset>
+    <label><strong>Nombres:</strong></label>&nbsp;
+    <span>{{cliente.nombres}}</span><br>
+
+    <label><strong>Apellidos:</strong> </label>&nbsp;
+    <span>{{cliente.apellidos}}</span><br>
+
+    <label><strong>Correo:</strong> </label>&nbsp;
+    <span><strong></strong>{{cliente.correo}}</span><br>
+
+    <label><strong>Usuario:</strong></label>&nbsp;
+    <span>{{cliente.usuario}}</span><br>
+
+    <label><strong>Password:</strong></label>&nbsp;
+    <span>***********</span><br>
+    
+
+    <button [routerLink]="['/cliente/list']" class="btn btn-info" ><fa-icon [icon]="faListAlt"></fa-icon>&nbsp;Volver</button> 
+                       
+</fieldset>
+<hr>
+<h3>Historial Compras</h3>
+<br>
+    <div class="row">        
+<table class="table table-hover">
+    <thead class="bg-secondary">
+        <tr class="color">
+            <th></th>
+            <th>Fecha de Compra</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of det_factura">
+            <td>
+                <div [style.backgroundImage]="'url(' + item.producto.imageUrl + ')'" class="thumbnail">
+                </div>
+            </td>
+            <td>{{ item.caB_FACTURA.fecha | date:'dd/MM/yyyy' }}</td>
+            <td>{{ item.producto.nombre}}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>{{ item.subtotal | currency}}</td>
+            
+        </tr>
+
+    </tbody>
+</table>
+    </div>

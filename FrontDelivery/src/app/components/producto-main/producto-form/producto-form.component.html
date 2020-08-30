@@ -41,6 +41,10 @@
           <select formControlName="categoria" [(ngModel)]="producto.id_pcategoria" 
           [ngClass]="{'is-invalid': submitted && f.categoria.errors }" 
           class="form-control form-control-user">
+                <!-- <option value=1>Gas Doméstico</option>
+                <option value=4>Agua Mineral sin Gas</option>
+                <option value=5>Agua Mineral con Gas</option>
+                <option value=6>Agua Vitaminizada</option> -->
             <option *ngFor="let opt of producto_categoria" [ngValue]="opt.id_categoria" >{{opt.nombre}}</option>
           </select>
         </div>

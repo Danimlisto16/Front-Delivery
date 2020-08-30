@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import * as $ from "jquery";  
-
+import { faShoppingCart, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,8 @@ import * as $ from "jquery";
 })
 export class AppComponent {
   title = 'FrontDelivery';
-
+  faShoppingCart=faShoppingCart;
+  faPlusCircle= faPlusCircle;
   ngOnInit() {
     var MainMenu = (function () {
       var MainMenu = function (config) {

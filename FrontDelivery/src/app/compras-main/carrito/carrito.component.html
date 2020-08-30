@@ -1,0 +1,68 @@
+<h1>Carrito de Compras</h1>
+<div class="card"  style="width: 80%;">
+  <div class="card-body">
+    <p>
+      Tienes {{ cantidad }} producto(s) agregado(s) a tu carrito.
+      <button *ngIf="carrito.length" (click)="limpiarCarrito()" class="float-right btn btn-light btn-sm">Vaciar Carrito de Compras</button>
+
+    </p>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Producto</th>
+        <th class="text-center" style="width: 230px">Cantidad</th>
+        <th class="text-right" style="width: 200px">Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of carrito">
+        <td>
+          <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail">
+          </div>
+        </td>
+        <td>
+          {{ item.nombre }}
+        </td>
+        <td>
+          <div class="row no-gutters">
+               <div class="col-2">
+                 <button 
+                   (click)="removeFromCart(item)"
+                   class="btn btn-danger btn-block">-</button> 
+               </div>
+               <div class="col text-center quantity">
+                 {{ item.cantidad }} en carrito
+               </div>
+               <div class="col-2">
+                 <button 
+                   (click)="addToCart(item)"
+                   class="btn btn-success btn-block">+</button> 
+               </div>
+             </div>
+        </td>
+        <td class="text-right">
+          {{ item.subtotal | currency:'USD':true }}
+        </td>
+        <td class="text-right">
+          <a  class="btn btn-warning btn-circle" (click)="eliminarProducto(item)"><fa-icon [icon]="faTimes"></fa-icon></a>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th class="text-right">{{ total | currency:'USD':true }}</th>
+      </tr>
+      <tr>
+        <th colspan="4">
+          <a *ngIf="carrito.length" routerLink="/check-out" class="btn btn-primary">Comprar</a>
+        </th>
+      </tr>
+    </tfoot>
+  </table>
+</div>

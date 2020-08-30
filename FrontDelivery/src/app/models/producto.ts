@@ -1,4 +1,3 @@
-
 export class PRODUCTO {
     id_producto:number;
     id_pcategoria:number;

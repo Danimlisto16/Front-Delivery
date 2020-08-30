@@ -15,6 +15,10 @@ import { ProductoFormComponent } from './components/producto-main/producto-form/
 import { ProductoListComponent } from './components/producto-main/producto-list/producto-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ComprasListComponent } from './compras-main/compras-list/compras-list.component';
+import { CarritoComponent } from './compras-main/carrito/carrito.component';
+import { ClienteCardComponent } from './cliente-main/cliente-card/cliente-card.component';
+import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,10 @@ import { ComprasListComponent } from './compras-main/compras-list/compras-list.c
     ClienteListComponent,
     ProductoFormComponent,
     ProductoListComponent,
-    ComprasListComponent
+    ComprasListComponent,
+    CarritoComponent,
+    ClienteCardComponent,
+    CarritoPagoComponent
   ],
   imports: [
     BrowserModule,

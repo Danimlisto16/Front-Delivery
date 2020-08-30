@@ -1,31 +1,55 @@
 
-<div class="main-menu">
-  <div class="main-menu-form">
-    <div class="main-menu-btn"><i class="fa fa-bars"></i></div>
-  </div>  
-  <div class="main-menu-content">
-    <!-- main logo -->
-    <div class="main-menu-logo">
-      <h2>Menú</h2>
-    </div>
-    <!-- navigation -->
-    <ul class="main-menu-nav">
-      <li><a href="/cliente/Form" class="orange"><i class="fa fa-user fa-fw"></i>&nbsp;Clientes</a></li>
-      <li><a href="/productos" routerLinkActive="active" class="yellow"><i class="fa fa-flask fa-fw front"></i>&nbsp; Productos</a></li>
-      <li><a href="/compras" class="red"><i class="fa fa-graduation-cap fa-fw"></i>&nbsp; Comprar</a></li>
-      <li><a href="#" class="purple"><i class="fa fa-info-circle fa-fw"></i>&nbsp; Acerca de</a></li>
-    </ul>
 
-    <a href="#" class="main-menu-close"><i class="fa fa-home fa-fw"></i>&nbsp; Inicio</a>
+    <!-- ............................................................................... -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="inicio">DELISHOP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cliente/list" routerLinkActive="active"><i class="fa fa-user fa-fw"></i> Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/productos" routerLinkActive="active"><fa-icon [icon]="faPlusCircle"></fa-icon> Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/carrito" routerLinkActive="active"><fa-icon [icon]="faShoppingCart"></fa-icon> Carrito</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/compras" routerLinkActive="active"><i class="fa fa-flask fa-fw front"></i> Catalago</a>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>
+
+
 
 <div class="container" id="margen" >
   <div class="container-fluid" >
     
     <router-outlet></router-outlet>
-  </div>    
+  </div>
+  
 </div>
+<!-- End copyright  -->
+<div class="container body-content">
+  <hr/>
+  <footer>
+  
+    <div class="footer-copyright">
+      <p class="footer-company">Todos los Derechos Reservados. &copy; 2020 <a href="#">DeliShop</a> </p>
+    </div>
+</footer>
+</div>
+
+<!-- <script src="../assets/js/jquery.superslides.min.js"></script> -->
+<!-- <script src="../assets/js/bootstrap-select.js"></script> -->
+
+
+
 
 
 

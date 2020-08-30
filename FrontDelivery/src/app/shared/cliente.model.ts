@@ -1,4 +1,4 @@
-export class cliente {
+export class Cliente {
          id_cliente :number
          documento :string
          nombres :string

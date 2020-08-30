@@ -1,0 +1,85 @@
+<h2>Pago</h2>
+<hr>
+  <!-- <div class="loader-overlay">
+    <div  class="loader"></div>
+  </div> -->
+
+<div class="row" >
+  <div class="col-6">
+    <br>
+        <h5 *ngIf="cliente != undefined">{{cliente.documento}} {{cliente.nombres}} {{cliente.apellidos}}</h5>        
+        <br> 
+     <div class="form-group">
+          <!-- <label ><h6></h6> </label> -->
+          <input (input)="searchCliente($event)" type="text" placeholder="Ingresa tu numero de cédula" class="form-control" required>
+          <br>
+<table *ngIf="clientes != null && clientes.length > 0" class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Nombres
+            </th>
+            <th>
+                Apellidos
+            </th>
+            <th>
+                Cédula
+            </th>          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>        
+            <tr *ngFor="let item of clientes">
+                
+                <td>
+                    {{item.nombres}}
+                </td>
+                <td>
+                    {{item.apellidos}}
+                </td>
+                <td>
+                    {{item.documento}}
+                </td>                
+                <td class="btn-group">
+                    <button (click)="selectClient(item.id_cliente)" class="btn btn-sm btn-info" ><fa-icon [icon]="faCheck"></fa-icon></button>                                            
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
+     </div>
+  </div>
+  <div class="col-6">
+     <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Resumen de Compra</h4>
+            <p class="card-text">Tienes {{ cantidad }} producto(s) agregado(s) a tu carrito.</p>
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let item of carrito" class="list-group-item">
+                {{ item.nombre }} x {{ item.cantidad }}
+                <div class="float-right">
+                  {{ item.subtotal | currency:'USD':true }}
+                </div>
+              </li>
+              <li class="list-group-item font-weight-bold">
+                Total 
+                <div class="float-right">
+                  {{ total | currency:'USD':true }}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div colspan="4">
+  <div *ngIf="show" class="" class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <br>
+</div>
+<div colspan="4">
+  
+  <a *ngIf="cliente != undefined" (click)="finalizarCompra()" class="btn btn-primary">Confirmar Comprar</a>
+</div>

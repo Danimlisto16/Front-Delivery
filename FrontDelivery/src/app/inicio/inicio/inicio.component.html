@@ -1,124 +1,49 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-</style>
-<body>
 
-<h1>Super Deli</h1>
-  <div class = "log">
-    <button class = "btn-primary">Iniciar Sesión </button>
-    <button class = "btn-primary"><a href="/cliente/Form">Registrar</a> </button>
-  </div>
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-  <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    <div class="w3-quarter">
-      <img src="../../../assets/img/sandwich.JPG" alt="Sandwich" style="width:100%">
-      <h3>El sandwich Perfecto!</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam odit earum laborum corpor</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/steak.JPG" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/cherries.JPG" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-      <p>What else?</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/vegetable.JPG" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-  </div>
+<!-- <p><code>wrapAround: true</code></p> -->
+<h1 class="titulo">DeliShop te ofrece todos los servicios básicos en la palma de tu mano...</h1>
+<!-- <h2>Resuelve tus necesidades al instante!</h2> -->
+<!-- Flickity HTML init -->
+<div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell1"></div>
+  <div class="gallery-cell2"></div>
+  <div class="gallery-cell"></div>
   
-  <!-- Second Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    <div class="w3-quarter">
-      <img src="../../../assets/img/popsicle.JPG" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/salmon.JPG" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/classic.JPG" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="../../../assets/img/lefrench.JPG" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt ipsam eligendi, officiis at rer</p>
-    </div>
-  </div>
-
-  
-  
-  <!-- Footer -->
-  <footer class="w3-row-padding w3-padding-32">
-    <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </div>
-  
-    <div class="w3-third">
-      <h3>BLOG POSTS</h3>
-      <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">
-          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Lorem</span><br>
-          <span>Sed mattis nunc</span>
-        </li>
-        <li class="w3-padding-16">
-          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Ipsum</span><br>
-          <span>Praes tinci sed</span>
-        </li> 
-      </ul>
-    </div>
-
-    <div class="w3-third w3-serif">
-      <h3>POPULAR TAGS</h3>
-      <p>
-        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
-      </p>
-    </div>
-  </footer>
-
-<!-- End page content -->
 </div>
+<br>
+<br>
+<br>
+<h2>Resuelve tus necesidades al instante!</h2>
+<br>
+<div class="card-deck">
+     <div class="card">
+       <img class="card-img-top" src="https://fuentesanfelipe.com/wp-content/uploads/elementor/thumbs/4-nrccv3hxzzdmori4bt40fb3l4tb1ea7ao3c4b2mfis.jpg" alt="Card image cap">
+       <div class="card-body">
+         <h5 class="card-title">Agua con Gas San Felipe</h5>
+         <p class="card-text">Visita nuestro catálogo de productos para conocer todo lo que ofertamos.<p>
+          <p class="card-text">Gracias por visitarnos.</p>
+         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+       </div>
+     </div>
+     <div class="card">
+       <img class="card-img-top" src="https://payload.cargocollective.com/1/17/559358/9080696/11_1250.jpeg" alt="Card image cap">
+       <div class="card-body">
+         <h5 class="card-title">Agua Tesalia Vitamin Water</h5>
+         <p class="card-text">Visita nuestro catálogo de productos para conocer todo lo que ofertamos.<p>
+          <p class="card-text">Gracias por visitarnos.</p>
+         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+       </div>
+     </div>
+     <div class="card">
+       <img class="card-img-top" src="https://marcimex.vteximg.com.br/arquivos/ids/163036-320-320/11252_Cilindro-de-Gas-Tanque-de-gas-Indurama-Azul-15Kg_foto01.png?v=637111744045330000" alt="Card image cap">
+       <div class="card-body">
+         <h5 class="card-title">Cilindro pequeño 10 kg</h5>
+         <p class="card-text">Visita nuestro catálogo de productos para conocer todo lo que ofertamos.<p>
+          <p>Gracias por visitarnos.</p>
+         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+       </div>
+     </div>
+   </div>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
 
-</body>
-</html>

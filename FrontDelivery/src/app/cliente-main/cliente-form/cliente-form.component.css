@@ -1,21 +1,4 @@
-*{
-    padding: 0;
-    margin: 0;
 
-}
-
-.contenedor{
-    max-width: 400px;   
-    margin-left: 20%;
-}
-
-.cliente-form{
-    height: 100%;
-    width: 100%;
-    background-image: url("../../../assets/img/sonrisa.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 
 div .alert{
