@@ -1,0 +1,29 @@
+<h2>Total ventas por producto</h2>
+<br>
+<div class="row1">
+     
+          <!-- <span><label >Seleccione una categoría</label></span>&nbsp;&nbsp;&nbsp;  -->
+          <span>  <select [(ngModel)]="categoria"
+          class="form-control form-control-user float-left">
+          <option *ngFor="let opt of producto_categoria" [ngValue]="opt.id_categoria" >{{opt.nombre}}</option>
+       </select></span>&nbsp;&nbsp;&nbsp;
+       
+          <a (click)="generarReporte()" class="btn btn-primary">Generar Reporte</a>
+     
+     
+ </div>
+<br>
+<br>
+ <div [hidden]="!filtro" class="chart-wrapper">
+   <canvas baseChart 
+   [datasets]="barChartData"
+   [labels]="barChartLabels"
+   [options]="barChartOptions"
+   [plugins]="barChartPlugins"
+   [legend]="barChartLegend"
+   [chartType]="barChartType"
+   [colors]="chartColors">
+ </canvas>
+</div>
+
+ 

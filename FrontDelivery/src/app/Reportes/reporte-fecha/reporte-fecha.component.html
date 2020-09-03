@@ -1,0 +1,24 @@
+<h2>Número de productos vendidos por fecha</h2>
+<br>
+<div class="row1">
+     <!-- <span><label >Seleccione una categoría y fecha</label></span>&nbsp;&nbsp;&nbsp; -->
+          <span> <select [(ngModel)]="categoria"
+          class="form-control form-control-user float-left">
+          <option *ngFor="let opt of producto_categoria" [ngValue]="opt.id_categoria" >{{opt.nombre}}</option>
+       </select></span>&nbsp;&nbsp;&nbsp;
+       <span> <input type="date" class="form-control form-control-user float-left" 
+       [(ngModel)]="fecha" /></span>&nbsp;&nbsp;&nbsp;
+          <a (click)="generarReporte()" class="btn btn-primary">Generar Reporte</a>    
+ </div>
+ <div [hidden]="!filtro" class="chart-wrapper">
+   <canvas baseChart 
+   [data]="pieChartData" 
+   [labels]="pieChartLabels" 
+   [chartType]="pieChartType"
+   [options]="pieChartOptions"
+   [plugins]="pieChartPlugins"
+   [legend]="pieChartLegend">
+ </canvas>
+</div>
+
+

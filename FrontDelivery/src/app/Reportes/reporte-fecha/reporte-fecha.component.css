@@ -1,0 +1,10 @@
+.row1{
+     display : inline-flex;
+}
+a{
+     /* align-items: center; */
+     color: white;
+}
+a:hover{
+     color: white;
+}

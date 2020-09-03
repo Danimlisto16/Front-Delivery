@@ -10,6 +10,8 @@ import { CarritoComponent } from './compras-main/carrito/carrito.component';
 import { ClienteCardComponent } from './cliente-main/cliente-card/cliente-card.component';
 import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.component';
 import { InicioComponent } from './inicio/inicio/inicio.component';
+import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.component';
+import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path: 'compras', component: ComprasListComponent},
   {path: 'carrito', component: CarritoComponent},
   {path: 'check-out', component: CarritoPagoComponent},
+  {path: 'reporte-fecha', component: ReporteFechaComponent},
+  {path: 'total-ventas', component: ReporteTotalComponent},
   {path: 'productos/add', component:ProductoFormComponent},
   {path: 'productos/edit/:id', component: ProductoFormComponent}
   

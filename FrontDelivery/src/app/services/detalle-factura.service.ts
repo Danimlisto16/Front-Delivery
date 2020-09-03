@@ -8,7 +8,7 @@ import { DETALLEFACTURA } from '../models/detalle-factura';
   providedIn: 'root'
 })
 export class DetalleFacturaService {
-  url : string = "http://dlisto-001-site1.ftempurl.com/api/detfactura";
+  url : string = "http://mtgr01-001-site1.gtempurl.com/api/detfactura";
 
   httpOptions={
     headers:new HttpHeaders({

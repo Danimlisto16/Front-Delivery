@@ -5,6 +5,7 @@ import { PRODUCTO } from 'src/app/models/producto';
 import { PRODUCTOCATEGORIA } from 'src/app/models/producto-categoria';
 import { PRODUCTOCATEGORIAService } from 'src/app/services/producto-categoria.service';
 import { ComprasService } from 'src/app/services/compras.service';
+import * as alertify from 'alertifyjs';
 @Component({
   selector: 'app-compras-list',
   templateUrl: './compras-list.component.html',
@@ -27,6 +28,14 @@ export class ComprasListComponent implements OnInit {
   agregarCarrito(a:PRODUCTO) :void {
     
     this.comprasService.addProducto(a);
+    var delay = alertify.get('notifier','delay');
+    alertify.set('notifier','delay', 1.5);
+    alertify.get('notifier','delay');
+    alertify.set('notifier','position', 'top-right','delay', delay);
+    // alertify.error('cddd');
+    alertify.success('Producto agregado al carrito');
+    
+
   }
 
   list() : void {

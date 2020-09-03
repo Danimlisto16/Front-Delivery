@@ -18,7 +18,9 @@ import { ComprasListComponent } from './compras-main/compras-list/compras-list.c
 import { CarritoComponent } from './compras-main/carrito/carrito.component';
 import { ClienteCardComponent } from './cliente-main/cliente-card/cliente-card.component';
 import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.component';
-
+import { ChartsModule } from 'ng2-charts';
+import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
+import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.c
     ComprasListComponent,
     CarritoComponent,
     ClienteCardComponent,
-    CarritoPagoComponent
+    CarritoPagoComponent,
+    ReporteTotalComponent,
+    ReporteFechaComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.c
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ChartsModule
   ],
   providers: [
     ClienteService,

@@ -1,7 +1,7 @@
 
 
     <!-- ............................................................................... -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #454545;">
   <a class="navbar-brand" href="inicio">DELISHOP</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +21,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/compras" routerLinkActive="active"><i class="fa fa-flask fa-fw front"></i> Catalago</a>
       </li>
+
+      <li class="nav-item dropdown">
+        <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" routerLinkActive="active" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <fa-icon [icon]="faListAlt"></fa-icon> Reportes </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/total-ventas" routerLinkActive="active">Ventas totales</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/reporte-fecha" routerLinkActive="active">Ventas por fecha</a>
+          </div>
+      </li>
+      
     </ul>
   </div>
 </nav>

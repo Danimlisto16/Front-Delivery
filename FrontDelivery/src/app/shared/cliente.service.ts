@@ -8,7 +8,7 @@ import { retry } from 'rxjs/operators';
 })
 export class ClienteService {
 
-  url : string = "http://dlisto-001-site1.ftempurl.com/api/cliente";
+  url : string = "http://mtgr01-001-site1.gtempurl.com/api/cliente";
   httpOptions={
     headers:new HttpHeaders({
       'Content-Type': 'application/json',

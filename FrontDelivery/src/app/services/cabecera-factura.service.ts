@@ -9,7 +9,7 @@ import { CAB_FACTURA } from '../models/cab-factura';
 })
 export class CabeceraFacturaService {
 
-  url : string = "http://dlisto-001-site1.ftempurl.com/api/cab_factura";
+  url : string = "http://mtgr01-001-site1.gtempurl.com/api/cab_factura";
 
   httpOptions={
     headers:new HttpHeaders({

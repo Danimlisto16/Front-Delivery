@@ -9,7 +9,7 @@ import { isFunction } from 'util';
 })
 export class PRODUCTOService {
 
-  url : string = "http://dlisto-001-site1.ftempurl.com/api/producto";
+  url : string = "http://mtgr01-001-site1.gtempurl.com/api/producto";
 
   httpOptions={
     headers:new HttpHeaders({
