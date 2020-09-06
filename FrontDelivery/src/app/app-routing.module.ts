@@ -12,7 +12,8 @@ import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.c
 import { InicioComponent } from './inicio/inicio/inicio.component';
 import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.component';
 import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
-
+import { AuthGuard } from './guards/auth.guard';
+import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/inicio', pathMatch: 'full'},
@@ -22,14 +23,15 @@ const routes: Routes = [
   { path: 'clientes/form/:id', component: ClienteFormComponent },
   { path: 'cliente/list', component: ClienteListComponent },
   { path: 'clientes/card/:id', component: ClienteCardComponent },
-  {path: 'productos', component: ProductoListComponent},
+  {path: 'productos', component: ProductoListComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
   {path: 'compras', component: ComprasListComponent},
   {path: 'carrito', component: CarritoComponent},
   {path: 'check-out', component: CarritoPagoComponent},
-  {path: 'reporte-fecha', component: ReporteFechaComponent},
-  {path: 'total-ventas', component: ReporteTotalComponent},
+  {path: 'reporte-fecha', component: ReporteFechaComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
+  {path: 'total-ventas', component: ReporteTotalComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
   {path: 'productos/add', component:ProductoFormComponent},
-  {path: 'productos/edit/:id', component: ProductoFormComponent}
+  {path: 'productos/edit/:id', component: ProductoFormComponent},
+  {path: 'ingresar', component: IngresoFormComponent}
   
 
 ];

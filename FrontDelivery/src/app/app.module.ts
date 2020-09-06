@@ -21,6 +21,7 @@ import { CarritoPagoComponent } from './compras-main/carrito-pago/carrito-pago.c
 import { ChartsModule } from 'ng2-charts';
 import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
 import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.component';
+import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.co
     ClienteCardComponent,
     CarritoPagoComponent,
     ReporteTotalComponent,
-    ReporteFechaComponent
+    ReporteFechaComponent,
+    IngresoFormComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,7 @@ export class CarritoPagoComponent implements OnInit {
   show:boolean = false;
   cab_factura:CAB_FACTURA=new CAB_FACTURA();
   det_factura:DETALLEFACTURA= new DETALLEFACTURA();
+  
   constructor(public comprasService:ComprasService, public clienteService:ClienteService, public detalleFacturaService:DetalleFacturaService, public cabeceraFacturaService:CabeceraFacturaService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

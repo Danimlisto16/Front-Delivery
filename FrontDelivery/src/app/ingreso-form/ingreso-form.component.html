@@ -1,0 +1,19 @@
+<div class="login-form">
+    
+     <h2 class="text-center">Iniciar Sesión</h2>       
+     <div class="form-group">
+         <input type="text" class="form-control" placeholder="Usuario" #usuario required="required">
+     </div>
+     <div class="form-group">
+         <input type="password" class="form-control" placeholder="Contraseña" #contrasena required="required">
+     </div>
+     <div class="form-group">
+         <button (click)="login(usuario.value, contrasena.value)" class="btn btn-primary btn-block">Log in</button>
+     </div>
+     <div class="clearfix">
+         <label class="pull-left checkbox-inline"><input type="checkbox"> Recordar</label>
+         <a href="" class="pull-right">¿Olvidaste la contraseña?</a>
+     </div>        
+ 
+ 
+</div>

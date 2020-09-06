@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import * as $ from "jquery";  
-import { faListAlt, faShoppingCart, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-
+import { faListAlt, faSignInAlt, faSignOutAlt, faShoppingCart, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +12,15 @@ import { faListAlt, faShoppingCart, faPlusCircle } from '@fortawesome/free-solid
 export class AppComponent {
   title = 'FrontDelivery';
   faShoppingCart=faShoppingCart;
+  faSignInAlt=faSignInAlt;
+  faSignOutAlt=faSignOutAlt;
   faPlusCircle= faPlusCircle;
   faListAlt=faListAlt;
+
+  constructor(private authService:AuthService, private router: Router){
+
+  }
+
   ngOnInit() {
     var MainMenu = (function () {
       var MainMenu = function (config) {
@@ -69,5 +77,15 @@ export class AppComponent {
       });
     });
     
+  }
+
+  logout() {
+    this.authService.logout();
+    location.href = "inicio";
+    // this.router.navigate(['/inicio']);
+  }
+
+  estaLogueado() {
+    return this.authService.isAuthenticated();
   }
 }

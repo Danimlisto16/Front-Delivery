@@ -53,6 +53,14 @@ export class ServiceInterceptor implements HttpInterceptor {
             text :error.message,
             icon : "error"
           });
+        }
+        if(error.status === 401)
+        {          
+          Swal.fire({
+            title : "Usuario no autenticado",
+            text : '401 Se debe autenticar para acceder',
+            icon : 'error'
+          });
         }     
     });
   }

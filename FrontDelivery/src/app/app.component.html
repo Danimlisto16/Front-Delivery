@@ -15,13 +15,6 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/productos" routerLinkActive="active"><fa-icon [icon]="faPlusCircle"></fa-icon> Productos</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/carrito" routerLinkActive="active"><fa-icon [icon]="faShoppingCart"></fa-icon> Carrito</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/compras" routerLinkActive="active"><i class="fa fa-flask fa-fw front"></i> Catalago</a>
-      </li>
-
       <li class="nav-item dropdown">
         <a  class="nav-link dropdown-toggle" href="#" id="navbarDropdown" routerLinkActive="active" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <fa-icon [icon]="faListAlt"></fa-icon> Reportes </a>
@@ -31,7 +24,26 @@
             <a class="dropdown-item" routerLink="/reporte-fecha" routerLinkActive="active">Ventas por fecha</a>
           </div>
       </li>
-      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/carrito" routerLinkActive="active"><fa-icon [icon]="faShoppingCart"></fa-icon> Carrito</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/compras" routerLinkActive="active"><i class="fa fa-flask fa-fw front"></i> Catálago</a>
+      </li>
+      <li class="nav-item" *ngIf="!estaLogueado();then ingresar else salir" >
+        
+      </li>
+      <ng-template #ingresar>
+        <a class="nav-link" routerLinkActive="active" routerLink="/ingresar">
+          <fa-icon [icon]="faSignInAlt"></fa-icon> Login
+        </a>
+      </ng-template>
+      <ng-template #salir>
+        <a class="nav-link" routerLinkActive="active" (click)='logout()'>
+          <fa-icon [icon]="faSignOutAlt"></fa-icon> Logout
+        </a>
+      </ng-template>
+            
     </ul>
   </div>
 </nav>
