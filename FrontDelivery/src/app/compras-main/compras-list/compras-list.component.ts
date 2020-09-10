@@ -12,11 +12,16 @@ import * as alertify from 'alertifyjs';
   styleUrls: ['./compras-list.component.css']
 })
 export class ComprasListComponent implements OnInit {
+  
+  title = 'paginacion';
+  p:number = 1;
+
   productos: PRODUCTO[];
   producto_categoria: PRODUCTOCATEGORIA[];
   
-  @HostBinding('class') classes = 'row';
+  //@HostBinding('class') classes = 'row';
   constructor(private productoService:PRODUCTOService,public comprasService:ComprasService, private prodcat:PRODUCTOCATEGORIAService) { }
+
   ngOnInit(): void {
     this.prodcat.list().subscribe(result => {      
       this.producto_categoria = result;

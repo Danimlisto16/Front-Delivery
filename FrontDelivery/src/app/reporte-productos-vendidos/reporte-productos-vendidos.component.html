@@ -1,0 +1,16 @@
+
+<!-- <tbody >
+     <tr *ngFor="let item of reportes ">
+          <td> {{item.cantidad}}</td>
+          <td> {{item.producto}}</td>
+        </tr>
+</tbody> -->
+<h2>Ventas Totales</h2>
+<div class="chart-wrapper">
+     <canvas baseChart
+    [datasets]="radarChartData"
+    [options]="radarChartOptions"
+    [labels]="radarChartLabels"
+    [chartType]="radarChartType">
+     </canvas>
+ </div>

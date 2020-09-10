@@ -13,6 +13,10 @@ import { PRODUCTOCATEGORIAService } from 'src/app/services/producto-categoria.se
 })
 
 export class ProductoListComponent implements OnInit {
+
+  title = 'paginacion';
+  p:number = 1;
+
   faTrash = faTrash;
   faPlus= faPlus;
   faListAlt= faListAlt;

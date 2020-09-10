@@ -14,6 +14,7 @@ import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.co
 import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
 import { AuthGuard } from './guards/auth.guard';
 import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
+import { ReporteProductosVendidosComponent } from './reporte-productos-vendidos/reporte-productos-vendidos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/inicio', pathMatch: 'full'},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'check-out', component: CarritoPagoComponent},
   {path: 'reporte-fecha', component: ReporteFechaComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
   {path: 'total-ventas', component: ReporteTotalComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
+  {path: 'productos-vendidos', component: ReporteProductosVendidosComponent, canActivate : [AuthGuard], data:{permittedRoles:["administrador"]}},
   {path: 'productos/add', component:ProductoFormComponent},
   {path: 'productos/edit/:id', component: ProductoFormComponent},
   {path: 'ingresar', component: IngresoFormComponent}

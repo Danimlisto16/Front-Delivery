@@ -8,6 +8,14 @@
      align-content: flex-start !important;
 }
 
+img{
+     height: 328px;
+     width: 328px;
+}
+
+footer{
+     margin-left: 30%;
+}
 /* .boton:first-child {
      display: -webkit-flex;
      -webkit-flex-direction: column-reverse !important;

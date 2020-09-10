@@ -5,3 +5,21 @@ a{
 a:hover{
      color: white;
 }
+#contenedor{
+     
+     display: -webkit-flex;
+     -webkit-flex-wrap: wrap !important;
+     -webkit-align-content: flex-start !important;
+     flex-wrap: wrap !important;
+     display: flex !important;
+     align-content: flex-start !important;
+}
+
+img{
+     height: 328px;
+     width: 328px;
+}
+
+footer{
+     margin-left: 30%;
+}

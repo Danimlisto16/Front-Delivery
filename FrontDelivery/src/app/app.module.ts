@@ -22,6 +22,8 @@ import { ChartsModule } from 'ng2-charts';
 import { ReporteTotalComponent } from './Reportes/reporte-total/reporte-total.component';
 import { ReporteFechaComponent } from './Reportes/reporte-fecha/reporte-fecha.component';
 import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
+import { ReporteProductosVendidosComponent } from './reporte-productos-vendidos/reporte-productos-vendidos.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
     CarritoPagoComponent,
     ReporteTotalComponent,
     ReporteFechaComponent,
-    IngresoFormComponent
+    IngresoFormComponent,
+    ReporteProductosVendidosComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { IngresoFormComponent } from './ingreso-form/ingreso-form.component';
     HttpClientModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    ChartsModule
+    ChartsModule,
+    NgxPaginationModule
   ],
   providers: [
     ClienteService,
